@@ -13,43 +13,15 @@
             },
             'listOfGeoviewLayerConfig': [
               {
-                'layerId': 'wmsLYR1',
-                'layerName': {
-                  'en': 'Première Nation / First Nation (WMS)',
-                  'fr': 'Première Nation / First Nation'
-                },
+                'layerId': 'esriFeatureLYR2',
+                'layerName': { 'en': 'Cities L2 (Esri-feature SIMPLE / base64 img)' },
                 'metadataAccessPath': {
-                  'en': 'https://services.aadnc-aandc.gc.ca/geomatics/services/Donnees_Ouvertes-Open_Data/Premiere_Nation_First_Nation/MapServer/WMSServer',
-                  'fr': 'https://services.aadnc-aandc.gc.ca/geomatics/services/Donnees_Ouvertes-Open_Data/Premiere_Nation_First_Nation/MapServer/WMSServer'
+                  'en': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/Overlays/Cities/MapServer'
                 },
-                'geoviewLayerType': 'ogcWms',
-                'listOfLayerEntryConfig': [{ 'layerId': '0' }]
-              },
-              {
-                'layerId': 'esriDynamicLYR2',
-                'layerName': {
-                  'en': 'Energy (Esri-dynamic)',
-                  'fr': 'Energy'
-                },
-                'metadataAccessPath': {
-                  'en': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer',
-                  'fr': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer'
-                },
-                'geoviewLayerType': 'esriDynamic',
-                'listOfLayerEntryConfig': [{ 'layerId': '0' }, { 'layerId': '6' }]
-              },
-              {
-                'layerId': 'wmsLYR7',
-                'layerName': {
-                  'en': 'Geomet (WMS)',
-                  'fr': 'Geomet'
-                },
-                'metadataAccessPath': {
-                  'en': 'https://geo.weather.gc.ca/geomet',
-                  'fr': 'https://geo.weather.gc.ca/geomet'
-                },
-                'geoviewLayerType': 'ogcWms',
-                'listOfLayerEntryConfig': [{ 'layerId': 'RAQDPS-FW.CE_PM2.5-DIFF-YAvg' }]
+                'geoviewLayerType': 'esriFeature',
+                'listOfLayerEntryConfig': [
+                  { 'layerId': '2' }
+                ]
               },
               {
                 'layerId': 'esriFeatureLYR1',
@@ -63,26 +35,30 @@
                 ]
               },
               {
-                'layerId': 'esriFeatureLYR2',
-                'layerName': { 'en': 'Cities L2 (Esri-feature SIMPLE / base64 img)' },
-                'metadataAccessPath': {
-                  'en': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/Overlays/Cities/MapServer'
+                'layerId': 'wmsLYR1',
+                'layerName': {
+                  'en': 'Première Nation / First Nation (WMS)',
+                  'fr': 'Première Nation / First Nation'
                 },
-                'geoviewLayerType': 'esriFeature',
-                'listOfLayerEntryConfig': [
-                  { 'layerId': '2' }
-                ]
+                'metadataAccessPath': {
+                  'en': 'https://services.aadnc-aandc.gc.ca/geomatics/services/Donnees_Ouvertes-Open_Data/Premiere_Nation_First_Nation/MapServer/WMSServer',
+                  'fr': 'https://services.aadnc-aandc.gc.ca/geomatics/services/Donnees_Ouvertes-Open_Data/Premiere_Nation_First_Nation/MapServer/WMSServer'
+                },
+                'geoviewLayerType': 'ogcWms',
+                'listOfLayerEntryConfig': [{ 'layerId': '0' }]
               },
               {
-                'layerId': 'esriFeatureLYR3',
-                'layerName': { 'en': 'Provinces (Esri-feature SIMPLE / vector)' },
-                'metadataAccessPath': {
-                  'en': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/Overlays/Provinces/MapServer'
+                'layerId': 'wmsLYR7',
+                'layerName': {
+                  'en': 'Geomet (WMS)',
+                  'fr': 'Geomet'
                 },
-                'geoviewLayerType': 'esriFeature',
-                'listOfLayerEntryConfig': [
-                  { 'layerId': '0' }
-                ]
+                'metadataAccessPath': {
+                  'en': 'https://geo.weather.gc.ca/geomet',
+                  'fr': 'https://geo.weather.gc.ca/geomet'
+                },
+                'geoviewLayerType': 'ogcWms',
+                'listOfLayerEntryConfig': [{ 'layerId': 'RAQDPS-FW.CE_PM2.5-DIFF-YAvg' }]
               }
             ]
           },
@@ -90,7 +66,40 @@
           'components': ['legend'],
           'corePackages': [],
           'suportedLanguages': ['en']
-        }"></div><p>Add a legend component.</p><button type="button" class="collapsible">Configuration Snippet</button><pre id="UC2CS" class="panel"></pre><script src="codedoc.js"></script><script>function addPolyline(map) {
+        }"></div><p>Add a legend component.</p><button type="button" class="collapsible">Configuration Snippet</button><pre id="UC2CS" class="panel"></pre><div class="map-title-holder"><h4 id="HUC3">2. Group Layer</h4><a class="ref-link" href="#top">Top</a></div><div id="UC3" class="llwp-map" data-lang="en" data-config="{
+          'map': {
+            'interaction': 'dynamic',
+            'viewSettings': {
+              'zoom': 4,
+              'center': [-100, 60],
+              'projection': 3978
+            },
+            'basemapOptions': {
+              'id': 'transport',
+              'shaded': false,
+              'labeled': true
+            },
+            'listOfGeoviewLayerConfig': [
+              {
+                'layerId': 'esriDynamicLYR2',
+                'layerName': {
+                  'en': 'Energy (Esri-dynamic)',
+                  'fr': 'Energy'
+                },
+                'metadataAccessPath': {
+                  'en': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer',
+                  'fr': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer'
+                },
+                'geoviewLayerType': 'esriDynamic',
+                'listOfLayerEntryConfig': [{ 'layerId': '0' }, { 'layerId': '11' }]
+              }
+            ]
+          },
+          'theme': 'dark',
+          'components': ['legend'],
+          'corePackages': [],
+          'suportedLanguages': ['en']
+        }"></div><p>Add a legend component.</p><button type="button" class="collapsible">Configuration Snippet</button><pre id="UC3CS" class="panel"></pre><script src="codedoc.js"></script><script>function addPolyline(map) {
       // call an api function to draw a polyline
       const polyline = cgpv.api.map(map).layer.vector.addPolyline(
         [
@@ -168,4 +177,34 @@
       // addPolygon('UC2');
       // addCircle('UC2');
       // addCircleMarker('UC2');
+
+      // define the map id
+      // const mapId = 'UC2';
+
+      // import react and api from the core
+      const { react, api, ui } = cgpv;
+
+      // import footerTabs from the core for the current map
+      // const { footerTabs } = api.map(mapId);
+
+
+      // create new tab and add the LegendComponent to the footer tab
+      // footerTabs.createFooterTab({
+      //   value: 0,
+      //   label: 'XLegend',
+      //   // TODO: Repair when getLegend is back for raster layer
+      //   // content: LegendComponent,
+      //   content: 'Coming Soon'
+      // });
+
+      // footerTabs.createLegendFooterTab({
+      //   value: 1,
+      //   label: 'Legend',
+      //   // TODO: Repair when getLegend is back for raster layer
+      //   // content: LegendComponent,
+      //   content: 'Coming Soon s'
+      // });
+
+      // const l = api.map(mapId).legend.createLegend();
+
     });</script></body></html>
