@@ -7,14 +7,14 @@
               'projection': 3857
             },
             'basemapOptions': {
-              'id': 'transport',
-              'shaded': false,
+              'basemapId': 'transport',
+              'shaded': true,
               'labeled': true
             },
             'listOfGeoviewLayerConfig': [
               {
-                'layerId': 'esriFeatureLYR2',
-                'layerName': { 'en': 'Cities L2 (Esri-feature SIMPLE / base64 img)' },
+                'geoviewLayerId': 'esriFeatureLYR2',
+                'geoviewLayerName': { 'en': 'Cities L2 (Esri-feature SIMPLE / base64 img)' },
                 'metadataAccessPath': {
                   'en': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/Overlays/Cities/MapServer'
                 },
@@ -24,8 +24,8 @@
                 ]
               },
               {
-                'layerId': 'esriFeatureLYR1',
-                'layerName': { 'en': 'Water quality at monitoring sites (Esri-feature UNIQUE VALUES)' },
+                'geoviewLayerId': 'esriFeatureLYR1',
+                'geoviewLayerName': { 'en': 'Water quality at monitoring sites (Esri-feature UNIQUE VALUES)' },
                 'metadataAccessPath': {
                   'en': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer'
                 },
@@ -35,8 +35,8 @@
                 ]
               },
               {
-                'layerId': 'wmsLYR1',
-                'layerName': {
+                'geoviewLayerId': 'wmsLYR1',
+                'geoviewLayerName': {
                   'en': 'Première Nation / First Nation (WMS)',
                   'fr': 'Première Nation / First Nation'
                 },
@@ -48,8 +48,8 @@
                 'listOfLayerEntryConfig': [{ 'layerId': '0' }]
               },
               {
-                'layerId': 'wmsLYR7',
-                'layerName': {
+                'geoviewLayerId': 'wmsLYR7',
+                'geoviewLayerName': {
                   'en': 'Geomet (WMS)',
                   'fr': 'Geomet'
                 },
@@ -75,14 +75,14 @@
               'projection': 3978
             },
             'basemapOptions': {
-              'id': 'transport',
-              'shaded': false,
+              'basemapId': 'transport',
+              'shaded': true,
               'labeled': true
             },
             'listOfGeoviewLayerConfig': [
               {
-                'layerId': 'esriDynamicLYR2',
-                'layerName': {
+                'geoviewLayerId': 'esriDynamicLYR2',
+                'geoviewLayerName': {
                   'en': 'Energy (Esri-dynamic)',
                   'fr': 'Energy'
                 },
@@ -91,15 +91,90 @@
                   'fr': 'https://maps-cartes.ec.gc.ca/arcgis/rest/services/CESI/MapServer'
                 },
                 'geoviewLayerType': 'esriDynamic',
-                'listOfLayerEntryConfig': [{ 'layerId': '0' }, { 'layerId': '11' }]
+                'listOfLayerEntryConfig': [
+                  {'layerId': '0'}, {'layerId': '11'}
+                ]
               }
             ]
           },
-          'theme': 'dark',
-          'components': ['legend'],
+          'components': ['legend', 'nav-bar'],
           'corePackages': [],
+          'theme': 'dark',
           'suportedLanguages': ['en']
-        }"></div><p>Add a legend component.</p><button type="button" class="collapsible">Configuration Snippet</button><pre id="UC3CS" class="panel"></pre><script src="codedoc.js"></script><script>function addPolyline(map) {
+        }"></div><p>Add a legend component.</p><button type="button" class="collapsible">Configuration Snippet</button><pre id="UC3CS" class="panel"></pre><div class="map-title-holder"><h4 id="HUC4">3. WMS Group</h4><a class="ref-link" href="#top">Top</a></div><div id="UC4" class="llwp-map" data-lang="en" data-config="{
+      'map': {
+        'interaction': 'dynamic',
+        'viewSettings': {
+          'zoom': 4,
+          'center': [
+            -100,
+            60
+          ],
+          'projection': 3857
+        },
+        'basemapOptions': {
+          'basemapId': 'transport',
+          'shaded': false,
+          'labeled': true
+        },
+        'listOfGeoviewLayerConfig': [
+          {
+            'geoviewLayerId': 'wmsLYR1-Root',
+            'geoviewLayerName': {
+              'en': 'Root'
+            },
+            'metadataAccessPath': {
+              'en': 'https://ows.mundialis.de/services/service'
+            },
+            'geoviewLayerType': 'ogcWms',
+            'initialSettings': {
+              'visible': true
+            },
+            'listOfLayerEntryConfig': [
+              {
+                'entryType': 'group',
+                'layerId': 'wmsLYR1-Group',
+                'layerName': {
+                  'en': 'Group'
+                },
+                'listOfLayerEntryConfig': [
+                  {
+                    'layerId': 'OSM-WMS'
+                  },
+                  {
+                    'layerId': 'TOPO-OSM-WMS'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            'geoviewLayerId': 'wmsLYR1-msi',
+            'geoviewLayerName': {
+              'en': 'MSI'
+            },
+            'metadataAccessPath': {
+              'en': 'https://datacube.services.geo.ca/ows/msi'
+            },
+            'geoviewLayerType': 'ogcWms',
+            'listOfLayerEntryConfig': [
+              {
+                'layerId': 'msi-94-or-more'
+              }
+            ]
+          }
+        ]
+      },
+      'components': [
+        'nav-bar',
+        'legend'
+      ],
+      'corePackages': [],
+      'theme': 'dark',
+      'suportedLanguages': [
+        'en'
+      ]
+  }"></div><p>Add a legend component.</p><button type="button" class="collapsible">Configuration Snippet</button><pre id="UC4CS" class="panel"></pre><script src="codedoc.js"></script><script>function addPolyline(map) {
       // call an api function to draw a polyline
       const polyline = cgpv.api.map(map).layer.vector.addPolyline(
         [
@@ -179,7 +254,7 @@
       // addCircleMarker('UC2');
 
       // define the map id
-      // const mapId = 'UC2';
+      // const mapId = 'UC3';
 
       // import react and api from the core
       const { react, api, ui } = cgpv;
