@@ -64,6 +64,27 @@ export function Legend(): JSX.Element | null {
       },
       mapId
     );
+
+    const layerSetId = `${mapId}-layerSet`;
+    const LegendsEsriFeatureLayerSet = api.createLegendsLayerSet(mapId, layerSetId);
+    console.log(LegendsEsriFeatureLayerSet);
+    api.event.on(
+      api.eventNames.GET_LEGENDS.ALL_LEGENDS_DONE,
+      (payload) => {
+        // const { resultSets } = payload;
+        console.log(`ALL_LEGENDS_DONE - ${mapId}`);
+        console.log(payload);
+        console.log(LegendsEsriFeatureLayerSet);
+        // api.event.off(api.eventNames.GET_LEGENDS.ALL_LEGENDS_DONE);
+        // displayLegend('esriFeatureLegendsId', resultSets);
+      },
+      mapId,
+      layerSetId
+    );
+
+    console.log('emit TRIGGER');
+    api.event.emit({ handlerName: mapId, event: api.eventNames.GET_LEGENDS.TRIGGER }, layerSetId);
+
     return () => {
       api.event.off(api.eventNames.LAYER.EVENT_ADD_LAYER, mapId);
       api.event.off(api.eventNames.LAYER.EVENT_REMOVE_LAYER, mapId);
