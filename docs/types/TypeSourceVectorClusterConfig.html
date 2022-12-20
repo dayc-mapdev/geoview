@@ -15,7 +15,7 @@
 <li><a href="../modules.html">geoview-core</a></li>
 <li><a href="TypeSourceVectorClusterConfig.html">TypeSourceVectorClusterConfig</a></li></ul>
 <h1>Type alias TypeSourceVectorClusterConfig</h1></div>
-<div class="tsd-signature">Type<wbr/>Source<wbr/>Vector<wbr/>Cluster<wbr/>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span><br/><span>    </span>distance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>enable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>minDistance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></div>
+<div class="tsd-signature">Type<wbr/>Source<wbr/>Vector<wbr/>Cluster<wbr/>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span><br/><span>    </span>color<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>distance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>enable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>minDistance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span><br/><span>    </span>textColor<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></div>
 <div class="tsd-comment tsd-typography"><hr>
 <p>Type used to configure the cluster feature of a vector layer. Works out of the box with point geometries. If another geometry is
 provided, it will be converted to points geometry.</p>
@@ -24,21 +24,29 @@ provided, it will be converted to points geometry.</p>
 <h4>Type declaration</h4>
 <ul class="tsd-parameters">
 <li class="tsd-parameter">
-<h5>distance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>Distance in pixels within which features will be clustered together (deafult 20px).</p>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> color<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Color for the cluster symbol and clustered geometries</p>
+</div></li>
+<li class="tsd-parameter">
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> distance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>Distance in pixels within which features will be clustered together (default 20px).</p>
 </div></li>
 <li class="tsd-parameter">
 <h5>enable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 <div class="tsd-comment tsd-typography"><p>Flag used to enable clustering. Default = false.</p>
 </div></li>
 <li class="tsd-parameter">
-<h5>min<wbr/>Distance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> min<wbr/>Distance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
 <div class="tsd-comment tsd-typography"><p>Minimum distance in pixels between clusters. Will be capped at the configured distance. By default no minimum distance is
 guaranteed. This config can be used to avoid overlapping icons. As a tradoff, the cluster feature&#39;s position will no longer
 be the center of all its features.</p>
+</div></li>
+<li class="tsd-parameter">
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> text<wbr/>Color<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Color for the text showing the number of points in a cluster</p>
 </div></li></ul></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/dayc-mapdev/geoview/blob/a8b5556f9/packages/geoview-core/src/geo/map/map-schema-types.ts#L53">packages/geoview-core/src/geo/map/map-schema-types.ts:53</a></li></ul></aside></div>
+<li>Defined in <a href="https://github.com/dayc-mapdev/geoview/blob/3ce86fba8/packages/geoview-core/src/geo/map/map-schema-types.ts#L55">packages/geoview-core/src/geo/map/map-schema-types.ts:55</a></li></ul></aside></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -85,8 +93,11 @@ be the center of all its features.</p>
 <li class="tsd-kind-reference"><a href="../modules.html#LayersOutlinedIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Layers<wbr/>Outlined<wbr/>Icon</a></li>
 <li class="tsd-kind-reference"><a href="../modules.html#ListAltIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>List<wbr/>Alt<wbr/>Icon</a></li>
 <li class="tsd-kind-reference"><a href="../modules.html#MapIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Map<wbr/>Icon</a></li>
+<li class="tsd-kind-reference"><a href="../modules.html#MenuIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Menu<wbr/>Icon</a></li>
 <li class="tsd-kind-reference"><a href="../modules.html#MoreVertIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>More<wbr/>Vert<wbr/>Icon</a></li>
+<li class="tsd-kind-reference"><a href="../modules.html#OpacityIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Opacity<wbr/>Icon</a></li>
 <li class="tsd-kind-reference"><a href="../modules.html#OpenInBrowserIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Open<wbr/>In<wbr/>Browser<wbr/>Icon</a></li>
+<li class="tsd-kind-reference"><a href="../modules.html#ReorderIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Reorder<wbr/>Icon</a></li>
 <li class="tsd-kind-reference"><a href="../modules.html#TodoIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Todo<wbr/>Icon</a></li>
 <li class="tsd-kind-reference"><a href="../modules.html#VisibilityIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Visibility<wbr/>Icon</a></li>
 <li class="tsd-kind-reference"><a href="../modules.html#VisibilityOffIcon" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-8388608-path"></use><use href="#icon-8388608-text"></use></svg>Visibility<wbr/>Off<wbr/>Icon</a></li>
@@ -333,7 +344,6 @@ be the center of all its features.</p>
 <li class="tsd-kind-type-alias"><a href="TypePanelProps.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Panel<wbr/>Props</a></li>
 <li class="tsd-kind-type-alias"><a href="TypePluginOptions.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Plugin<wbr/>Options</a></li>
 <li class="tsd-kind-type-alias"><a href="TypePluginStructure.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Plugin<wbr/>Structure</a></li>
-<li class="tsd-kind-type-alias"><a href="TypeProjectionCodes.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Projection<wbr/>Codes</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeQueryType.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Query<wbr/>Type</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeRecordOfPlugin.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Record<wbr/>Of<wbr/>Plugin</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeResultSets.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Result<wbr/>Sets</a></li>
@@ -356,6 +366,7 @@ be the center of all its features.</p>
 <li class="tsd-kind-type-alias"><a href="TypeTileGrid.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Tile<wbr/>Grid</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeTriggerLegendsPayload.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Trigger<wbr/>Legends<wbr/>Payload</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeUniqueValueStyleInfo.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Unique<wbr/>Value<wbr/>Style<wbr/>Info</a></li>
+<li class="tsd-kind-type-alias"><a href="TypeValidMapProjectionCodes.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Valid<wbr/>Map<wbr/>Projection<wbr/>Codes</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeValidVersions.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Valid<wbr/>Versions</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeVectorKeys.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Vector<wbr/>Keys</a></li>
 <li class="tsd-kind-type-alias"><a href="TypeVectorLayer.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Type<wbr/>Vector<wbr/>Layer</a></li>
@@ -479,6 +490,7 @@ be the center of all its features.</p>
 <li class="tsd-kind-function"><a href="../functions/Select.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>Select</a></li>
 <li class="tsd-kind-function"><a href="../functions/Shell.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>Shell</a></li>
 <li class="tsd-kind-function"><a href="../functions/Slider-1.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>Slider</a></li>
+<li class="tsd-kind-function"><a href="../functions/SliderBase.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>Slider<wbr/>Base</a></li>
 <li class="tsd-kind-function"><a href="../functions/Snackbar-1.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>Snackbar</a></li>
 <li class="tsd-kind-function tsd-is-external"><a href="../functions/Stack.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>Stack</a></li>
 <li class="tsd-kind-function"><a href="../functions/Stepper.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>Stepper</a></li>
