@@ -41,6 +41,7 @@
     "unknown": "Titre de légende inconnu",
     "remove_layer": "Supprimer le calque",
     "opacity": "Opacité",
+    "zoom_to": "Zoom sur la Couche",
     "expand_legend": "Développer la légende"
   },
   "keyboardnav": {

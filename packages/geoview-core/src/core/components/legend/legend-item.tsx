@@ -117,6 +117,7 @@ export interface TypeLegendItemProps {
   layerConfigEntry?: TypeLayerEntryConfig;
   isRemoveable?: boolean;
   canSetOpacity?: boolean;
+  canZoomTo?: boolean;
   isParentVisible?: boolean;
   toggleParentVisible?: () => void;
   expandAll?: boolean;
@@ -136,6 +137,7 @@ export function LegendItem(props: TypeLegendItemProps): JSX.Element {
     layerConfigEntry,
     isRemoveable,
     canSetOpacity,
+    canZoomTo,
     isParentVisible,
     toggleParentVisible,
     expandAll,
@@ -320,6 +322,15 @@ export function LegendItem(props: TypeLegendItemProps): JSX.Element {
     setOpacityOpen(!isOpacityOpen);
     handleCloseMenu();
   };
+  const handleZoomTo = () => {
+    // TODO Don't use the defined extent, need the extent from features
+    // TODO Also - need to figure out what happens if the feature extent is greater than the configured map extent
+    // TODO see issue #798
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    api.map(mapId).fitBounds(geoviewLayerInstance.gvLayers?.getSource().getExtent());
+    handleCloseMenu();
+  };
   const handleSetOpacity = (opacityValue: number | number[]) => {
     if (subLayerId) geoviewLayerInstance.setOpacity((opacityValue as number) / 100, subLayerId);
     else geoviewLayerInstance.setOpacity((opacityValue as number) / 100);
@@ -390,6 +401,7 @@ export function LegendItem(props: TypeLegendItemProps): JSX.Element {
         {/* Add more layer options here - zoom to, reorder */}
         {isRemoveable && <MenuItem onClick={handleRemoveLayer}>{t('legend.remove_layer')}</MenuItem>}
         {canSetOpacity && groupItems.length === 0 && <MenuItem onClick={handleOpacityOpen}>{t('legend.opacity')}</MenuItem>}
+        {canZoomTo && groupItems.length === 0 && <MenuItem onClick={handleZoomTo}>{t('legend.zoom_to')}</MenuItem>}
       </Menu>
       <Collapse in={isOpacityOpen} timeout="auto">
         <Box sx={sxClasses.opacityMenu}>

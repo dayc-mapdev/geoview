@@ -28,6 +28,7 @@
             <td>
               <a href="./index.html">Main</a><br />
               <a href="#HUC1">Default Configuration</a><br />
+              <a href="#HUC2">With Layers in Config</a><br />
             </td>
           </tr>
         </tbody>
@@ -40,7 +41,6 @@
         </tbody>
       </table>
     </div>
-
         <div class="map-title-holder">
           <h4 id="HUC1">1. Default Configuration</h4><a class="ref-link" href="#top">Top</a>
         </div>
@@ -126,6 +126,56 @@
         <hr />
         <button type="button" class="collapsible">Configuration Snippet</button>
         <pre id="mapWMCS" class="panel"></pre>
+
+        <hr />
+
+        <div class="map-title-holder">
+          <h4 id="HUC2">2. Layer Panel with layers in config</h4><a class="ref-link" href="#top">Top</a>
+        </div>
+        <div id="mapWM2" class="llwp-map" data-lang="en" data-config="{
+          'map': {
+            'interaction': 'dynamic',
+            'viewSettings': {
+              'zoom': 4,
+              'center': [-100, 60],
+              'projection': 3978
+            },
+            'basemapOptions': {
+              'basemapId': 'transport',
+              'shaded': true,
+              'labeled': true
+            },
+            'listOfGeoviewLayerConfig': [
+              {
+                'geoviewLayerId': 'esriFeatureLYR7',
+                'geoviewLayerName': { 'en': 'Oil Sands mines' },
+                'metadataAccessPath': {
+                  'en': 'https://maps-cartes.services.geo.ca/server_serveur/rest/services/NRCan/900A_and_top_100_en/MapServer'
+                },
+                'geoviewLayerType': 'esriFeature',
+                'listOfLayerEntryConfig': [
+                  { 'layerId': '7' }
+                ]
+              },
+              {
+                'geoviewLayerId': 'esriFeatureLYR4',
+                'geoviewLayerName': { 'en': 'Metal mines' },
+                'metadataAccessPath': {
+                  'en': 'https://maps-cartes.services.geo.ca/server_serveur/rest/services/NRCan/900A_and_top_100_en/MapServer'
+                },
+                'geoviewLayerType': 'esriFeature',
+                'listOfLayerEntryConfig': [
+                  { 'layerId': '4' }
+                ]
+              }
+            ]
+          },
+          'theme': 'dark',
+          'components': ['app-bar'],
+          'corePackages': ['layers-panel'],
+          'suportedLanguages': ['en']
+        }"></div>
+        <pre id="mapWM2CS" class="panel"></pre>
     <script src="codedoc.js"></script>
     <script>
       // initialize cgpv and api events, a callback is optional, used if calling api's after the rendering is ready

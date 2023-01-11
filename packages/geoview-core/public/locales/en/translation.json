@@ -41,6 +41,7 @@
     "unknown": "Unknown Layer Title",
     "remove_layer": "Remove Layer",
     "opacity": "Opacity",
+    "zoom_to": "Zoom to Layer",
     "expand_legend": "Expand Legend"
   },
   "keyboardnav": {
